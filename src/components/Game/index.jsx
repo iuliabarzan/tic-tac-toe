@@ -70,8 +70,8 @@ class Game extends React.Component {
     }
   
     render() {
-      const history = this.state.history;
-      const current = history[this.state.stepNumber];
+      const { history, stepNumber, xIsNext } = this.state; // sintactic sugar equivalent with "const history = this.state.history;"
+      const current = history[stepNumber];
       const winner = calculateWinner(current.squares);
   
       const moves = history.map((step, move) => {
@@ -87,7 +87,7 @@ class Game extends React.Component {
       if (winner) {
         status = "Winner: " + winner;
       } else {
-        status = "Next player: " + (this.state.xIsNext ? "X" : "O");
+        status = "Next player: " + (xIsNext ? "X" : "O");
       }
   
       return (
