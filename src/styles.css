@@ -58,4 +58,9 @@
   .game-restart {
     margin-left: 20px;
   }
+
+  .active button {
+    color: red;
+
+  }
   
