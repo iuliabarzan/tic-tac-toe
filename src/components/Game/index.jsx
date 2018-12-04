@@ -5,8 +5,10 @@ import calculateWinner from './utils';
 class Game extends React.Component {
   constructor(props) {
     super(props);
-    // Before we implement jumpTo, we’ll add stepNumber to the Game component’s state
-    // to indicate which step we’re currently viewing.
+    /*
+      Before we implement jumpTo, we’ll add stepNumber to the Game component’s state
+      to indicate which step we’re currently viewing.
+    */
     this.state = {
       history: [
         {
@@ -19,8 +21,8 @@ class Game extends React.Component {
   }
 
   /*
-  We will now make a few changes to the
-  Game’s handleClick method which fires when you click on a square.
+    We will now make a few changes to the
+    Game’s handleClick method which fires when you click on a square.
    */
   handleClick(i) {
     const { history, xIsNext } = this.state;
@@ -45,7 +47,7 @@ class Game extends React.Component {
     Next, we'll define the jumpTo method in Game to update that stepNumber
     We also set xIsNext to true if the number that we're changing  stepNumber
     is even(numar par)
-     */
+  */
 
   jumpTo(step) {
     this.setState({
@@ -54,8 +56,9 @@ class Game extends React.Component {
     });
   }
 
-  /* Finally, we will modify the Game component’s render method from always rendering
-  the last move to rendering the currently selected move according to stepNumber:
+  /*
+    Finally, we will modify the Game component’s render method from always rendering
+    the last move to rendering the currently selected move according to stepNumber:
   */
 
   restartGame() {
@@ -71,7 +74,10 @@ class Game extends React.Component {
   }
 
   render() {
-    // sintactic sugar equivalent with "const history = this.state.history;"
+    /*
+      Destructuring
+      Sintactic sugar equivalent with "const history = this.state.history;"
+    */
     const { history, stepNumber, xIsNext } = this.state;
     const current = history[stepNumber];
     const winner = calculateWinner(current.squares);

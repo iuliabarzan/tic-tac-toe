@@ -1,12 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Game from './components/Game';
-
+import Players from './components/Players';
 import './styles.css';
 
 function App() {
   return (
-    <Game />
+    <Players />
   );
 }
 
