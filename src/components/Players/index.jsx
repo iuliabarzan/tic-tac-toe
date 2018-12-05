@@ -39,11 +39,11 @@ class Players extends React.Component {
       : (
         <form>
           
-          <label>Player 1:</label>
-          <input type="text" name="player1" onChange={this.handleFirstPlayerChange}/>
+          <label for="p1">Player 1:</label>
+          <input type="text" name="player1" id="p1" onChange={this.handleFirstPlayerChange}/>
           
-          <label>Player 2:</label>
-          <input type="text" name="player2"  onChange={this.handleSecondPlayerChange}/>
+          <label for="p2">Player 2:</label>
+          <input type="text" name="player2" id="p2" onChange={this.handleSecondPlayerChange}/>
           
           <button type="submit" value="Start game" onClick={this.handleClick}>
             Start game
