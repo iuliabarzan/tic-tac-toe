@@ -1,6 +1,5 @@
 import React from 'react';
 import Game from '../Game';
-
 class Players extends React.Component {
   constructor() {
     super();
@@ -27,6 +26,11 @@ class Players extends React.Component {
   }
   
   handleClick = () => {
+    const { player1, player2 } = this.state;
+
+    player1.trim().length() > 0 && 
+    player2.trim().length() > 0 &&
+
     this.setState({
       clicked: true
     });
@@ -48,9 +52,11 @@ class Players extends React.Component {
           <button type="submit" value="Start game" onClick={this.handleClick}>
             Start game
           </button>
+          
         </form>
       );
   }
 }
 
 export default Players;
+
